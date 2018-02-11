@@ -3,7 +3,7 @@
 - name: Creating sudoers configuration under /etc/sudoers.d
   template:
     src: "etc/sudoers.d/ansible.j2"
-    dest: "/etc/sudoers.d/{{ sudo_sudoers_file }}"
+    dest: "{{ sudo_sudoers_d_path }}/{{ sudo_sudoers_file }}"
     validate: "visudo -cf %s"
     owner: root
     group: "{{ sudo_sudoers_group }}"
